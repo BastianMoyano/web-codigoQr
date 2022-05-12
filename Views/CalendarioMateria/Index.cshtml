@@ -1,0 +1,410 @@
+﻿
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Add_Calendario_Turno";
+}
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<style>
+    .mes button {
+        font-size: 12px;
+        width: 100%;
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    #ANO {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .Semana div {
+        margin: 1% 1% 1% 1%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card mb-3">
+
+            <div class="card-header">
+                <div>
+                    @*<button class="float-right d-inline-block btn btn-sm btn-outline-danger "><i class="fa fa-minus"></i></button>
+                    <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddTurno" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Generar Despacho"><i class="fa fa-plus"></i></button>*@
+                    <h3>Calendario  <br /><small>Lista de Materia</small> </h3>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-12">
+                        <label for="exampleInputEmail1">Seleccione turno</label>
+                        <select id="Turno" class="form-control" style="margin:2%">
+                            <option value="0">--Seleccione--</option>
+                        </select>
+
+                        <div class="col-md-12 md-3">
+                            <div class="row">
+
+                                <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                    <span><a href="#" id="left-ano" class=" text-black"><i class="fa fa-angle-left text-black fa-2x"></i></a> </span>
+                                </div>
+                                <div class="col-lg-8 col-xl-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                    <button class="btn btn-outline-info" id="AnoSelect" style="margin-top:1%"><span id="ANO"></span></button>
+                                </div>
+                                <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                    <span><a href="#" id="right-ano" class="text-black"><i class="fa fa-angle-right text-black fa-2x"></i></a> </span>
+                                </div>
+                                <div style="display:none">
+                                    <div class="col-lg-12"><hr /></div>
+                                    <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 col-md-4  mes">
+                                        <button class="btn btn-outline-info dia_mes" value="1">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Enero</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Ene</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="2">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Febrero</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Feb</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="3">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Marzo</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Mar</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="4">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Abril</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Abr</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="5">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Mayo</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">May</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="6">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Junio</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Jun</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="7">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Julio</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Jul</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="8">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Agosto</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Ago</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="9">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Septiemb.</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Sep</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="10">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Octubre</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Oct</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="11">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Noviemb.</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Nov</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-4 col-xl-4 col-md-4 col-sm-4 col-xs-4 mes">
+                                        <button class="btn btn-outline-info dia_mes" value="12">
+                                            <span class="d-none d-xl-block d-lg-block d-sm-block d-md-block ">Diciemb.</span>
+                                            <span class="d-xl-none d-lg-none d-sm-none d-md-none">Dic</span>
+
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+            <div class="card-footer">
+                <div class="pull-right">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-8" id="Panel_Mes_Calendario" style="display:none">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div>
+                    @*<button class="float-right d-inline-block btn btn-sm btn-outline-danger "><i class="fa fa-minus"></i></button>
+                    <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddTurno" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Generar Despacho"><i class="fa fa-plus"></i></button>
+                    <h3>Calendario Materia <br /><small></small> </h3>*@
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12 md-12" style="font-size:10px">
+                    <div id="PanelCalendario_dd">
+                        <div class="row">
+                            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                <button class="btn btn-sm btn-outline-success selec" id="ACTIVO">ACTIVO</button>
+                            </div>
+                            <div class="col-lg-8 col-xl-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                <span id="MES_CALENDARIO" class="font-weight-bold"></span>
+                            </div>
+                            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                <button class="btn btn-sm btn-outline-danger selec" id="INACTIVO">INACTIVO</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top:1%">
+
+
+                            <table class="table table-hover table-bordered table-striped" id="tabla_Calendario">
+                                <thead>
+
+                                    <tr>
+                                        <th>LUN</th>
+                                        <th>MAR</th>
+                                        <th>MIE</th>
+                                        <th>JUE</th>
+                                        <th>VIE</th>
+                                        <th>SAB</th>
+                                        <th>DOM</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="pull-right">
+                    <button id="GuardarRangosQlioMes" class="btn btn-sm btn-outline-primary" onclick="GuardarMes()">GUARDAR</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div>
+                    @*<button class="float-right d-inline-block btn btn-sm btn-outline-danger "><i class="fa fa-minus"></i></button>
+                    <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddTurno" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Generar Despacho"><i class="fa fa-plus"></i></button>*@
+                    <h3>Calendario   <br /><small></small> </h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12 md-12" style="font-size:10px">
+                    <div id="PanelCalendario_dd">
+                        <div class="row">
+                            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                <button class="btn btn-sm btn-outline-success selec" id="ACTIVO">ACTIVO</button>
+                            </div>
+                            <div class="col-lg-8 col-xl-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                <span id="MES_CALENDARIO" class="font-weight-bold"></span>
+                            </div>
+                            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-xs-1 text-center">
+                                <button class="btn btn-sm btn-outline-danger selec" id="INACTIVO">INACTIVO</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top:1%">
+
+
+
+                            <div id="Contenido_Calendario" class="row"></div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="pull-right">
+                    <button id="GuardarRangosQlio" class="btn btn-sm btn-outline-primary" onclick="Guardar()">GUARDAR</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+@*<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div>
+                    <button class="float-right d-inline-block btn btn-sm btn-outline-danger "><i class="fa fa-minus"></i></button>
+                    <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddTurno" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Generar Despacho"><i class="fa fa-plus"></i></button>
+                    <h3>Calendario Turnos <br /><small>Lista de Turnos</small> </h3>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+
+
+
+
+
+
+                @*<div class="row">
+
+
+                    <div class="row Semana" id="Semana_4">
+                        <div id="Lunes_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Martes_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Miercoles_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Jueves_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Viernes_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Sabado_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Domingo_4">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+
+
+                    <div class="row Semana" id="Semana_5">
+                        <div id="Lunes_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Martes_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Miercoles_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Jueves_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Viernes_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Sabado_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Domingo_5">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+
+                    <div class="row Semana" id="Semana_6">
+                        <div id="Lunes_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Martes_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Miercoles_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Jueves_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Viernes_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Sabado_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                        <div id="Domingo_6">
+                            <button class="btn btn-sm btn-outline-danger"></button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>*@
+
+
+@section scripts{
+
+
+    <script src="~/assets/css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+    <script src="~/assets/js/Mantendores/CalendarioMes.js"></script>
+    <script src="~/assets/js/Mantendores/LlenarCalendarioMes.js"></script>
+    <script src="~/assets/LoadPage/LoadPage.js"></script>
+
+}

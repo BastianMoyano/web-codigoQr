@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+
+    <link rel="Manifest" href="~/manifest/manifest.Json">
+    <link rel="apple-touch-icon" href="~/logoDuoc.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/manifest/logoDuoc.png">
+    <meta name="apple-mobile-web-app-title" content="Mi Duoc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-startup-image" href="~/manifest/logoDuoc.png">
+
+
+    <base href="../../../../">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mi Duoc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/assets/css/Login.css" />
+
+    <link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+    <link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+</head>
+<body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/serviceworker.js')
+                .then(reg => console.log("Registro de SW exitoso", reg))
+                .catch(err => console.log("Error", err))
+        }
+    </script>
+    <main>
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>Ya tienes una cuenta?</h3>
+                    <p>Inicia sesion para entrar a la pagina</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesion</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>Aun no tienes una cuenta?</h3>
+                    <p>Registrate para que puedas iniciar Sesion</p>
+                    <button id="btn__registrarse">Registrarse</button>
+                </div>
+            </div>
+
+            <div class="contenedor__login-register">
+                <form action="/" class="formulario__login">
+                    <h2>Iniciar Sesion</h2>
+                    <input type="text" placeholder="Ingrese Rut     ej:12345678-9" id="rut" name="rut" value="" autocomplete="off" autofocus="" oninput="checkRut(this)" onkeypress="return soloNumeros(event)" maxlength="10" onkeydown="enterTab(event)" minlength="9">
+                    <input type="password" id="password" placeholder="contrasena" />
+                    <button id="Ingresar">Entrar</button>
+                </form>
+                <form action="/" class="formulario__register">
+                    <h2>Registrarse</h2>
+                    <input type="text" placeholder="Nombre Completo" />
+                    <input type="text" placeholder="Correo Electronico" />
+                    <input type="text" placeholder="Usuario" />
+                    <input type="password" placeholder="contrasena" />
+                    <button>Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="~/assets/js/Login.js"></script>
+    <script src="~/assets/js/Rut.js"></script>
+    <script src="~/assets/js/Login/Ingresar.js"></script>
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+    <script src="~/assets/css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

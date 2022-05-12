@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoVisionModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProyectoVisionEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASIGNACION_ALUMNO" EntityType="ProyectoVisionModel1.ASIGNACION_ALUMNO" />
+    <EntitySet Name="ASIGNACION_PROFESOR" EntityType="ProyectoVisionModel1.ASIGNACION_PROFESOR" />
+    <EntitySet Name="ASISTENCIA_MATERIA" EntityType="ProyectoVisionModel1.ASISTENCIA_MATERIA" />
+    <EntitySet Name="CALENDARIO_MATERIA" EntityType="ProyectoVisionModel1.CALENDARIO_MATERIA" />
+    <EntitySet Name="CATEGORIA_LIBRO" EntityType="ProyectoVisionModel1.CATEGORIA_LIBRO" />
+    <EntitySet Name="ESTACIONAMIENTO" EntityType="ProyectoVisionModel1.ESTACIONAMIENTO" />
+    <EntitySet Name="LIBRO" EntityType="ProyectoVisionModel1.LIBRO" />
+    <EntitySet Name="MATERIA" EntityType="ProyectoVisionModel1.MATERIA" />
+    <EntitySet Name="MI_MENU" EntityType="ProyectoVisionModel1.MI_MENU" />
+    <EntitySet Name="MI_PERMISOS_MENU" EntityType="ProyectoVisionModel1.MI_PERMISOS_MENU" />
+    <EntitySet Name="MI_PERMISOS_SUB_MENU" EntityType="ProyectoVisionModel1.MI_PERMISOS_SUB_MENU" />
+    <EntitySet Name="MI_SUB_MENU" EntityType="ProyectoVisionModel1.MI_SUB_MENU" />
+    <EntitySet Name="MI_TIPO_USUARIOS" EntityType="ProyectoVisionModel1.MI_TIPO_USUARIOS" />
+    <EntitySet Name="MI_USUARIOS" EntityType="ProyectoVisionModel1.MI_USUARIOS" />
+    <EntitySet Name="PERIODO" EntityType="ProyectoVisionModel1.PERIODO" />
+    <EntitySet Name="REGISTRO_BICICLETA" EntityType="ProyectoVisionModel1.REGISTRO_BICICLETA" />
+    <EntitySet Name="REGISTRO_INGRESO" EntityType="ProyectoVisionModel1.REGISTRO_INGRESO" />
+    <EntitySet Name="REGISTRO_LIBRO" EntityType="ProyectoVisionModel1.REGISTRO_LIBRO" />
+    <EntitySet Name="SECCION" EntityType="ProyectoVisionModel1.SECCION" />
+    <EntitySet Name="SERIELIBRO" EntityType="ProyectoVisionModel1.SERIELIBRO" />
+    <EntitySet Name="TORNIQUETE" EntityType="ProyectoVisionModel1.TORNIQUETE" />
+    <EntitySet Name="database_firewall_rules" EntityType="ProyectoVisionModel1.database_firewall_rules" />
+    <EntitySet Name="ipv6_database_firewall_rules" EntityType="ProyectoVisionModel1.ipv6_database_firewall_rules" />
+    <AssociationSet Name="FK_PermisosMenu_Modulos" Association="ProyectoVisionModel1.FK_PermisosMenu_Modulos">
+      <End Role="MI_MENU" EntitySet="MI_MENU" />
+      <End Role="MI_PERMISOS_MENU" EntitySet="MI_PERMISOS_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubMenu_Modulos" Association="ProyectoVisionModel1.FK_SubMenu_Modulos">
+      <End Role="MI_MENU" EntitySet="MI_MENU" />
+      <End Role="MI_SUB_MENU" EntitySet="MI_SUB_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermisosSubMenu_SubMenu" Association="ProyectoVisionModel1.FK_PermisosSubMenu_SubMenu">
+      <End Role="MI_SUB_MENU" EntitySet="MI_SUB_MENU" />
+      <End Role="MI_PERMISOS_SUB_MENU" EntitySet="MI_PERMISOS_SUB_MENU" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ASIGNACION_ALUMNO">
+    <Key>
+      <PropertyRef Name="ID_ASIGNACION" />
+    </Key>
+    <Property Name="ID_ASIGNACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SECCION" Type="Int32" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="NOTA1" Type="Int32" />
+    <Property Name="NOTA2" Type="Int32" />
+    <Property Name="NOTA3" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ASIGNACION_PROFESOR">
+    <Key>
+      <PropertyRef Name="ID_ASIGANCIONP" />
+    </Key>
+    <Property Name="ID_ASIGANCIONP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="ID_SECCION" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ASISTENCIA_MATERIA">
+    <Key>
+      <PropertyRef Name="ID_ASISTENCIA" />
+    </Key>
+    <Property Name="ID_ASISTENCIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SECCION" Type="Int32" />
+    <Property Name="ID_CALENDARIOMATERIA" Type="Int32" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="ASISTENCIA" Type="Int32" />
+    <Property Name="EXAMEN" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CALENDARIO_MATERIA">
+    <Key>
+      <PropertyRef Name="ID_CALENDARIOMATERIA" />
+    </Key>
+    <Property Name="ID_CALENDARIOMATERIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Precision="0" />
+    <Property Name="ID_MATERIA" Type="Int32" />
+    <Property Name="ID_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CATEGORIA_LIBRO">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ESTACIONAMIENTO">
+    <Key>
+      <PropertyRef Name="ID_ESTACIONAMIENTO" />
+    </Key>
+    <Property Name="ID_ESTACIONAMIENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUPO" Type="Int32" />
+    <Property Name="ID_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LIBRO">
+    <Key>
+      <PropertyRef Name="ID_LIBRO" />
+    </Key>
+    <Property Name="ID_LIBRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ANO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AUTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NUMERO_PAGINA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_CATEGORIA" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IMAGEN" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MATERIA">
+    <Key>
+      <PropertyRef Name="ID_MATERIA" />
+    </Key>
+    <Property Name="ID_MATERIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MI_MENU">
+    <Key>
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_MENU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_MENU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TIPO" Type="Boolean" />
+    <Property Name="VISTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTROLADOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ICONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MI_PERMISOS_MENU" Relationship="ProyectoVisionModel1.FK_PermisosMenu_Modulos" FromRole="MI_MENU" ToRole="MI_PERMISOS_MENU" />
+    <NavigationProperty Name="MI_SUB_MENU" Relationship="ProyectoVisionModel1.FK_SubMenu_Modulos" FromRole="MI_MENU" ToRole="MI_SUB_MENU" />
+  </EntityType>
+  <EntityType Name="MI_PERMISOS_MENU">
+    <Key>
+      <PropertyRef Name="ID_PERMISOS_MODULOS" />
+    </Key>
+    <Property Name="ID_PERMISOS_MODULOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_MODULO" Type="Int32" />
+    <Property Name="COD_TIPOUSUARIO" Type="Int32" />
+    <NavigationProperty Name="MI_MENU" Relationship="ProyectoVisionModel1.FK_PermisosMenu_Modulos" FromRole="MI_PERMISOS_MENU" ToRole="MI_MENU" />
+  </EntityType>
+  <EntityType Name="MI_PERMISOS_SUB_MENU">
+    <Key>
+      <PropertyRef Name="ID_PERMISOS_SUB_MENU" />
+    </Key>
+    <Property Name="ID_PERMISOS_SUB_MENU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_SUB_MENU" Type="Int32" />
+    <Property Name="COD_TIPOUSUARIO" Type="Int32" />
+    <NavigationProperty Name="MI_SUB_MENU" Relationship="ProyectoVisionModel1.FK_PermisosSubMenu_SubMenu" FromRole="MI_PERMISOS_SUB_MENU" ToRole="MI_SUB_MENU" />
+  </EntityType>
+  <EntityType Name="MI_SUB_MENU">
+    <Key>
+      <PropertyRef Name="ID_SUB_MODULO" />
+    </Key>
+    <Property Name="ID_SUB_MODULO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MODULO" Type="Int32" />
+    <Property Name="VISTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTROLADOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MI_MENU" Relationship="ProyectoVisionModel1.FK_SubMenu_Modulos" FromRole="MI_SUB_MENU" ToRole="MI_MENU" />
+    <NavigationProperty Name="MI_PERMISOS_SUB_MENU" Relationship="ProyectoVisionModel1.FK_PermisosSubMenu_SubMenu" FromRole="MI_SUB_MENU" ToRole="MI_PERMISOS_SUB_MENU" />
+  </EntityType>
+  <EntityType Name="MI_TIPO_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_TIPO_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MI_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RUT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONSTRASENA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COD_TIPO_USUARIO" Type="Int32" />
+    <Property Name="COD_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PERIODO">
+    <Key>
+      <PropertyRef Name="IDPERIODO" />
+    </Key>
+    <Property Name="IDPERIODO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_INICIO" Type="DateTime" Precision="0" />
+    <Property Name="FECHA_FIN" Type="DateTime" Precision="0" />
+    <Property Name="ID_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="REGISTRO_BICICLETA">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_BICICLETA" />
+    </Key>
+    <Property Name="ID_REGISTRO_BICICLETA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="FECHA_HORA_INGRESO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_HORA_SALIDA" Type="DateTime" Precision="3" />
+    <Property Name="ID_ESTACIONAMIENTO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="REGISTRO_INGRESO">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO" />
+    </Key>
+    <Property Name="ID_REGISTRO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="FECHA_HORA_INGRESO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_HORA_SALIDA" Type="DateTime" Precision="3" />
+    <Property Name="ID_TORNIQUETE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="REGISTRO_LIBRO">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_LIBRO" />
+    </Key>
+    <Property Name="ID_REGISTRO_LIBRO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="FECHA_HORA_RETIRO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_HORA_RETORNO" Type="DateTime" Precision="3" />
+    <Property Name="ID_LIBROSERIE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SECCION">
+    <Key>
+      <PropertyRef Name="ID_SECCION" />
+    </Key>
+    <Property Name="ID_SECCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SECCION1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_MATERIA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SERIELIBRO">
+    <Key>
+      <PropertyRef Name="ID_LIBROSERIE" />
+    </Key>
+    <Property Name="ID_LIBROSERIE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SERIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_LIBRO" Type="Int32" />
+    <Property Name="ID_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TORNIQUETE">
+    <Key>
+      <PropertyRef Name="ID_TORNIQUETE" />
+    </Key>
+    <Property Name="ID_TORNIQUETE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_ESTADO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="start_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="end_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ipv6_database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ipv6_address" />
+      <PropertyRef Name="end_ipv6_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="start_ipv6_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="end_ipv6_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_PermisosMenu_Modulos">
+    <End Type="ProyectoVisionModel1.MI_MENU" Role="MI_MENU" Multiplicity="0..1" />
+    <End Type="ProyectoVisionModel1.MI_PERMISOS_MENU" Role="MI_PERMISOS_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="MI_PERMISOS_MENU">
+        <PropertyRef Name="COD_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubMenu_Modulos">
+    <End Type="ProyectoVisionModel1.MI_MENU" Role="MI_MENU" Multiplicity="0..1" />
+    <End Type="ProyectoVisionModel1.MI_SUB_MENU" Role="MI_SUB_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="MI_SUB_MENU">
+        <PropertyRef Name="COD_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermisosSubMenu_SubMenu">
+    <End Type="ProyectoVisionModel1.MI_SUB_MENU" Role="MI_SUB_MENU" Multiplicity="0..1" />
+    <End Type="ProyectoVisionModel1.MI_PERMISOS_SUB_MENU" Role="MI_PERMISOS_SUB_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_SUB_MENU">
+        <PropertyRef Name="ID_SUB_MODULO" />
+      </Principal>
+      <Dependent Role="MI_PERMISOS_SUB_MENU">
+        <PropertyRef Name="COD_SUB_MENU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

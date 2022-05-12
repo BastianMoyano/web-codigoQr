@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoVisionModel1StoreContainer" CdmEntityContainer="ProyectoVisionEntities1">
+    <EntitySetMapping Name="ASIGNACION_ALUMNO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.ASIGNACION_ALUMNO">
+        <MappingFragment StoreEntitySet="ASIGNACION_ALUMNO">
+          <ScalarProperty Name="NOTA3" ColumnName="NOTA3" />
+          <ScalarProperty Name="NOTA2" ColumnName="NOTA2" />
+          <ScalarProperty Name="NOTA1" ColumnName="NOTA1" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_SECCION" ColumnName="ID_SECCION" />
+          <ScalarProperty Name="ID_ASIGNACION" ColumnName="ID_ASIGNACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASIGNACION_PROFESOR">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.ASIGNACION_PROFESOR">
+        <MappingFragment StoreEntitySet="ASIGNACION_PROFESOR">
+          <ScalarProperty Name="ID_SECCION" ColumnName="ID_SECCION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ASIGANCIONP" ColumnName="ID_ASIGANCIONP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASISTENCIA_MATERIA">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.ASISTENCIA_MATERIA">
+        <MappingFragment StoreEntitySet="ASISTENCIA_MATERIA">
+          <ScalarProperty Name="EXAMEN" ColumnName="EXAMEN" />
+          <ScalarProperty Name="ASISTENCIA" ColumnName="ASISTENCIA" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_CALENDARIOMATERIA" ColumnName="ID_CALENDARIOMATERIA" />
+          <ScalarProperty Name="ID_SECCION" ColumnName="ID_SECCION" />
+          <ScalarProperty Name="ID_ASISTENCIA" ColumnName="ID_ASISTENCIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CALENDARIO_MATERIA">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.CALENDARIO_MATERIA">
+        <MappingFragment StoreEntitySet="CALENDARIO_MATERIA">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_CALENDARIOMATERIA" ColumnName="ID_CALENDARIOMATERIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORIA_LIBRO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.CATEGORIA_LIBRO">
+        <MappingFragment StoreEntitySet="CATEGORIA_LIBRO">
+          <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTACIONAMIENTO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.ESTACIONAMIENTO">
+        <MappingFragment StoreEntitySet="ESTACIONAMIENTO">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="CUPO" ColumnName="CUPO" />
+          <ScalarProperty Name="ID_ESTACIONAMIENTO" ColumnName="ID_ESTACIONAMIENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIBRO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.LIBRO">
+        <MappingFragment StoreEntitySet="LIBRO">
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="NUMERO_PAGINA" ColumnName="NUMERO_PAGINA" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="ANO" ColumnName="ANO" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+          <ScalarProperty Name="ID_LIBRO" ColumnName="ID_LIBRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATERIA">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MATERIA">
+        <MappingFragment StoreEntitySet="MATERIA">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_MENU">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_MENU">
+        <MappingFragment StoreEntitySet="MI_MENU">
+          <ScalarProperty Name="ICONO" ColumnName="ICONO" />
+          <ScalarProperty Name="CONTROLADOR" ColumnName="CONTROLADOR" />
+          <ScalarProperty Name="VISTA" ColumnName="VISTA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="NOMBRE_MENU" ColumnName="NOMBRE_MENU" />
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_PERMISOS_MENU">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_PERMISOS_MENU">
+        <MappingFragment StoreEntitySet="MI_PERMISOS_MENU">
+          <ScalarProperty Name="COD_TIPOUSUARIO" ColumnName="COD_TIPOUSUARIO" />
+          <ScalarProperty Name="COD_MODULO" ColumnName="COD_MODULO" />
+          <ScalarProperty Name="ID_PERMISOS_MODULOS" ColumnName="ID_PERMISOS_MODULOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_PERMISOS_SUB_MENU">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_PERMISOS_SUB_MENU">
+        <MappingFragment StoreEntitySet="MI_PERMISOS_SUB_MENU">
+          <ScalarProperty Name="COD_TIPOUSUARIO" ColumnName="COD_TIPOUSUARIO" />
+          <ScalarProperty Name="COD_SUB_MENU" ColumnName="COD_SUB_MENU" />
+          <ScalarProperty Name="ID_PERMISOS_SUB_MENU" ColumnName="ID_PERMISOS_SUB_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_SUB_MENU">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_SUB_MENU">
+        <MappingFragment StoreEntitySet="MI_SUB_MENU">
+          <ScalarProperty Name="CONTROLADOR" ColumnName="CONTROLADOR" />
+          <ScalarProperty Name="VISTA" ColumnName="VISTA" />
+          <ScalarProperty Name="COD_MODULO" ColumnName="COD_MODULO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_SUB_MODULO" ColumnName="ID_SUB_MODULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_TIPO_USUARIOS">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_TIPO_USUARIOS">
+        <MappingFragment StoreEntitySet="MI_TIPO_USUARIOS">
+          <ScalarProperty Name="NOMBRE_TIPO_USUARIO" ColumnName="NOMBRE_TIPO_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MI_USUARIOS">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.MI_USUARIOS">
+        <MappingFragment StoreEntitySet="MI_USUARIOS">
+          <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+          <ScalarProperty Name="COD_TIPO_USUARIO" ColumnName="COD_TIPO_USUARIO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CONSTRASENA" ColumnName="CONSTRASENA" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERIODO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.PERIODO">
+        <MappingFragment StoreEntitySet="PERIODO">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+          <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="IDPERIODO" ColumnName="IDPERIODO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISTRO_BICICLETA">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.REGISTRO_BICICLETA">
+        <MappingFragment StoreEntitySet="REGISTRO_BICICLETA">
+          <ScalarProperty Name="ID_ESTACIONAMIENTO" ColumnName="ID_ESTACIONAMIENTO" />
+          <ScalarProperty Name="FECHA_HORA_SALIDA" ColumnName="FECHA_HORA_SALIDA" />
+          <ScalarProperty Name="FECHA_HORA_INGRESO" ColumnName="FECHA_HORA_INGRESO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_REGISTRO_BICICLETA" ColumnName="ID_REGISTRO_BICICLETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISTRO_INGRESO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.REGISTRO_INGRESO">
+        <MappingFragment StoreEntitySet="REGISTRO_INGRESO">
+          <ScalarProperty Name="ID_TORNIQUETE" ColumnName="ID_TORNIQUETE" />
+          <ScalarProperty Name="FECHA_HORA_SALIDA" ColumnName="FECHA_HORA_SALIDA" />
+          <ScalarProperty Name="FECHA_HORA_INGRESO" ColumnName="FECHA_HORA_INGRESO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_REGISTRO" ColumnName="ID_REGISTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISTRO_LIBRO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.REGISTRO_LIBRO">
+        <MappingFragment StoreEntitySet="REGISTRO_LIBRO">
+          <ScalarProperty Name="ID_LIBROSERIE" ColumnName="ID_LIBROSERIE" />
+          <ScalarProperty Name="FECHA_HORA_RETORNO" ColumnName="FECHA_HORA_RETORNO" />
+          <ScalarProperty Name="FECHA_HORA_RETIRO" ColumnName="FECHA_HORA_RETIRO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_REGISTRO_LIBRO" ColumnName="ID_REGISTRO_LIBRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECCION">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.SECCION">
+        <MappingFragment StoreEntitySet="SECCION">
+          <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+          <ScalarProperty Name="SECCION1" ColumnName="SECCION" />
+          <ScalarProperty Name="ID_SECCION" ColumnName="ID_SECCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERIELIBRO">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.SERIELIBRO">
+        <MappingFragment StoreEntitySet="SERIELIBRO">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ID_LIBRO" ColumnName="ID_LIBRO" />
+          <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+          <ScalarProperty Name="ID_LIBROSERIE" ColumnName="ID_LIBROSERIE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TORNIQUETE">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.TORNIQUETE">
+        <MappingFragment StoreEntitySet="TORNIQUETE">
+          <ScalarProperty Name="TIPO_ESTADO" ColumnName="TIPO_ESTADO" />
+          <ScalarProperty Name="ID_TORNIQUETE" ColumnName="ID_TORNIQUETE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ipv6_database_firewall_rules">
+      <EntityTypeMapping TypeName="ProyectoVisionModel1.ipv6_database_firewall_rules">
+        <MappingFragment StoreEntitySet="ipv6_database_firewall_rules">
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="end_ipv6_address" ColumnName="end_ipv6_address" />
+          <ScalarProperty Name="start_ipv6_address" ColumnName="start_ipv6_address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

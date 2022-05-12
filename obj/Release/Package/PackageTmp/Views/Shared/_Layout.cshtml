@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <base href="../../">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="es-ES" />
+
+    <title>Mi Duoc</title>
+    <link rel="manifest" href="~/manifest.json">
+
+    <link rel="apple-touch-icon" href="~/logoDuoc.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="~/logoDuoc.png">
+
+    <meta name="apple-mobile-web-app-title" content="Mi Duoc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-startup-image" href="~/logoDuoc.png">
+
+    <meta name="description" content="No aside layout examples">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    @*<link rel="shortcut icon" href="~/img/favicon96.png" />*@
+    <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="~/assets/vendors/general/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/js/app.js"></script>
+    <link href="~/assets/css/bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/fontawesome-free-5.11.2-web/css/fontawesome.css" rel="stylesheet">
+    <link href="~/assets/fontawesome-free-5.11.2-web/css/brands.css" rel="stylesheet">
+    <link href="~/assets/fontawesome-free-5.11.2-web/css/solid.css" rel="stylesheet">
+    <link href="https://rawgit.com/lykmapipo/themify-icons/master/css/themify-icons.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet"
+          type="text/css" />
+    <link href="~/assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" />
+    @*<link rel="shortcut icon" href="/img/favicon-32x32.png" />*@
+    @*<link href="~/css/icono.css" rel="stylesheet" />*@
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,400,900&display=swap" rel="stylesheet">
+    <link href="~/assets/css/app.css" rel="stylesheet" />
+
+    <style scoped>
+
+        #app {
+            font-family: "Avenir", Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            height: 67vh;
+            width: 100vw !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+
+
+        @@media (max-width: 1024px) {
+            .kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler span {
+                background: #ffffff;
+            }
+
+                .kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler span::before,
+                .kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler span::after {
+                    background: #ffffff;
+                }
+        }
+
+        .slide-enter {
+            opacity: 0;
+            /*transform: translateY(20px);*/
+        }
+
+        .slide-enter-active {
+            animation: slide-in 1.5s ease-out forwards;
+            transition: opacity .3s;
+        }
+
+        .slide-leave {
+        }
+
+        .router-link-exact-active {
+            color: red !important;
+            /* background-color: red !important; */
+        }
+
+        .router-link-active {
+            color: red !important;
+            /* background-color: red !important; */
+        }
+
+        @@media (min-width: 1025px) {
+            .kt-header-menu-wrapper .kt-header-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-text {
+                font-size: 11px !important;
+            }
+
+            .kt-menu__link-icon {
+                display: none;
+            }
+        }
+
+        @@media screen and (max-width: 768px) {
+            .mobile table.v-table tr:nth-child(odd) {
+                border-left: 6px solid #014a87 !important;
+            }
+
+            .mobile table.v-table tr:nth-child(even) {
+                border-left: 6px solid #40C4FF !important;
+            }
+        }
+    </style>
+
+    @*<link href="~/particles.js-master/demo/css/style.css" rel="stylesheet" />*@
+</head>
+
+<!-- end::Head -->
+<!-- begin::Body -->
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+    @*<div id="particles-js"></div>*@
+    <!-- begin:: Page -->
+    <!-- begin:: Header Mobile -->
+
+
+    <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+        <div class="kt-header-mobile__logo">
+
+        </div>
+        <div class="kt-header-mobile__toolbar">
+            <button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
+
+            <button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+        </div>
+    </div>
+
+    <!-- end:: Header Mobile -->
+    <div class="kt-grid kt-grid--hor kt-grid--root">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+            <!-- begin:: Aside -->
+            <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+            <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+
+                <!-- begin:: Aside -->
+                <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
+                    <div class="kt-aside__brand-logo">
+                        <a href="../Home/Index">
+                            @*<img src="~/img/new/Logo-Mi-Medicien-495-x140px_white.png" width="110" height="30" />*@
+
+                            <img src="~/Img/Logo_DuocUC.svg" height="40" />
+                        </a>
+                    </div>
+                    <div class="kt-aside__brand-tools">
+                        <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler"><span></span></button>
+                    </div>
+                </div>
+
+                <!-- end:: Aside -->
+                <!-- begin:: Aside Menu -->
+                <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                    <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
+                        <ul class="kt-menu__nav " id="MenuDinamico">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- end:: Aside Menu -->
+            </div>
+
+            <!-- end:: Aside -->
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+
+                <!-- begin:: Header -->
+                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+
+                    <!-- begin: Header Menu -->
+                    <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+                    <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+                        <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
+                            @*<ul class="kt-menu__nav ">
+                                    <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="index.html" class="kt-menu__link "><span class="kt-menu__link-text">Application</span></a></li>
+                                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Features</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                        <div class="kt-menu__submenu  kt-menu__submenu--fixed kt-menu__submenu--left" style="width:1000px">
+                                            <div class="kt-menu__subnav">
+                                                <ul class="kt-menu__content">
+                                                    <li class="kt-menu__item ">
+                                                        <h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Task Reports</span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
+                                                        <ul class="kt-menu__inner">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gift-1"></i><span class="kt-menu__link-text">Latest Tasks</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-shopping-cart-1"></i><span class="kt-menu__link-text">Pending Tasks</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-lorry"></i><span class="kt-menu__link-text">Urgent Tasks</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Completed Tasks</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-position"></i><span class="kt-menu__link-text">Failed Tasks</span></a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="kt-menu__item ">
+                                                        <h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Profit Margins</span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
+                                                        <ul class="kt-menu__inner">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Overall Profits</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Gross Profits</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Nett Profits</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Year to Date Reports</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Quarterly Profits</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Monthly Profits</span></a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="kt-menu__item ">
+                                                        <h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Staff Management</span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
+                                                        <ul class="kt-menu__inner">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Top Management</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Project Managers</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Development Staff</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Customer Service</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Sales and Marketing</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Executives</span></a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="kt-menu__item ">
+                                                        <h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Tools</span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
+                                                        <ul class="kt-menu__inner">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Analytical Reports</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Customer CRM</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Operational Growth</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Social Media Presence</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Files and Directories</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><span class="kt-menu__link-text">Audit & Logs</span></a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Apps</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                        <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
+                                            <ul class="kt-menu__subnav">
+                                                <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph-1"></i><span class="kt-menu__link-text">Reporting</span></a></li>
+                                                <li class="kt-menu__item  kt-menu__item--submenu" data-ktmenu-submenu-toggle="hover" aria-haspopup="true">
+                                                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-placeholder"></i><span class="kt-menu__link-text">Social Presence</span><i class="kt-menu__hor-arrow la la-angle-right"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                                    <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--right">
+                                                        <ul class="kt-menu__subnav">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Reached Users</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">SEO Ranking</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">User Dropout Points</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Market Segments</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Opportunity Growth</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-cardiogram"></i><span class="kt-menu__link-text">Sales & Marketing</span></a></li>
+                                                <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-contract"></i><span class="kt-menu__link-text">Campaigns</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--success kt-badge--rounded">3</span></span></a></li>
+                                                <li class="kt-menu__item  kt-menu__item--submenu" data-ktmenu-submenu-toggle="hover" aria-haspopup="true">
+                                                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-rocket"></i><span class="kt-menu__link-text">Deployment Center</span><i class="kt-menu__hor-arrow la la-angle-right"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                                    <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--right">
+                                                        <ul class="kt-menu__subnav">
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Merge Branch</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--danger kt-badge--rounded">3</span></span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Version Controls</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Database Manager</span></a></li>
+                                                            <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">System Settings</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>*@
+                        </div>
+                    </div>
+
+                    <!-- end: Header Menu -->
+                    <!-- begin:: Header Topbar -->
+                    <div class="kt-header__topbar">
+
+                        <div class="kt-header__topbar-item dropdown">
+                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
+                                <span class="kt-header__topbar-icon kt-pulse kt-pulse--brand">
+                                    <i class="flaticon2-bell-alarm-symbol"></i>
+                                    <span class="kt-pulse__ring"></span>
+                                </span>
+
+                                <!--
+                                    Use dot badge instead of animated pulse effect:
+                                    <span class="kt-badge kt-badge--dot kt-badge--notify kt-badge--sm kt-badge--brand"></span>
+                                -->
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+                                <form>
+
+                                    <!--begin: Head -->
+                                    <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                                        <h3 class="kt-head__title">
+                                            User Notifications
+                                            &nbsp;
+                                            <span class="btn btn-success btn-sm btn-bold btn-font-md">23 new</span>
+                                        </h3>
+                                        <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-success kt-notification-item-padding-x" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">Alerts</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#topbar_notifications_events" role="tab" aria-selected="false">Events</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#topbar_notifications_logs" role="tab" aria-selected="false">Logs</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!--end: Head -->
+
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                                <div class="kt-header__topbar-user">
+                                    <span class="kt-header__topbar-welcome kt-hidden-mobile"></span>
+                                    <span class="kt-header__topbar-username kt-hidden-mobile">@Session["USUARIO"].ToString()</span>
+                                    @*<img alt="Pic" class="kt-radius-100" src="assets/media/users/300_25.jpg" />*@
+
+                                    <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+                                    <!--<span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>-->
+                                </div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                                <!--begin: Head -->
+                                <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                                    <div class="kt-user-card__avatar">
+                                        @*<img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />*@
+
+                                        <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+                                        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success"></span>
+                                    </div>
+                                    <div class="kt-user-card__name">
+                                        @Session["USUARIO"].ToString()
+                                    </div>
+                                    <div class="kt-user-card__badge">
+                                        <span class="btn btn-success btn-sm btn-bold btn-font-md">  @Session["RUT"].ToString()</span>
+                                    </div>
+                                </div>
+
+                                <!--end: Head -->
+                                <!--begin: Navigation -->
+                                <div class="kt-notification">
+                                    <a href="/Perfil/MiPerfil" class="kt-notification__item">
+                                        <div class="kt-notification__item-icon">
+                                            <i class="flaticon2-calendar-3 kt-font-success"></i>
+                                        </div>
+                                        <div class="kt-notification__item-details">
+                                            <div class="kt-notification__item-title kt-font-bold">
+                                                Mi Perfil
+                                            </div>
+                                            <div class="kt-notification__item-time">
+
+                                                Configuraciones de cuenta y más
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <div class="kt-notification__custom kt-space-between">
+                                        <a href="Login/CerrarSesion" @*target="_blank"*@ class="btn btn-label btn-label-brand btn-sm btn-bold">Cerrar Sesion</a>
+                                        @*<a href="custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>*@
+                                    </div>
+                                </div>
+
+                                <!--end: Navigation -->
+                            </div>
+                        </div>
+
+                        <!--end: User Bar -->
+                    </div>
+
+                    <!-- end:: Header Topbar -->
+                </div>
+
+                <!-- end:: Header -->
+                <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="margin-top:53px  " id="kt_content">
+
+                    <!-- begin:: Subheader -->
+                    <!-- end:: Subheader -->
+                    <!-- begin:: Content -->
+
+
+                    @RenderBody()
+
+                    <div class="container" style="position:fixed;z-index: 9999;padding-left:35.5%;padding-top: 20%; " id="ContenedorIconoCarga">
+                        <div class="row">
+                            <div class="mt-5" style="/* border: 2px solid #007bff; *//* background-color: #f8f9fa; */padding: 30px;width: 1000px;height: 200px;border-radius: 100px;/* margin: 20px 20px 20px 20px; */">
+
+
+                                @*<img src="~/img/logomedicien4.svg" alt="" style="width: 27%;margin-top: -20%;margin-left: -9%;">*@
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end:: Content -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#2c77f4",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
+    </script>
+
+    <!-- end::Global Config -->
+    <!--begin::Global Theme Bundle(used by all pages) -->
+    <script src="~/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+    <script src="~/assets/js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
+    <script src="~/assets/plugins/custom/gmaps/gmaps.js" type="text/javascript"></script>
+    @*<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>*@
+
+
+
+    <style scoped="">
+
+        @@media (min-width: 1025px) {
+            .kt-header-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon {
+                color: #b5b2c8;
+                display: none;
+            }
+        }
+    </style>
+    <style>
+
+        .input-group > .input-group-prepend > .btn,
+        .input-group > .input-group-prepend > .input-group-text,
+        .input-group > .input-group-append:not(:last-child) > .btn,
+        .input-group > .input-group-append:not(:last-child) > .input-group-text,
+        .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+        .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: #014a87;
+        }
+
+        .input-group i {
+            color: #ffffff;
+            line-height: 0;
+        }
+
+        @@media (min-width: 1025px) {
+            .show_logo_mobile {
+                margin: 0px;
+                display: none;
+            }
+
+            .kt-menu__link-icon {
+                display: none;
+            }
+
+            .drop-perfil {
+                position: absolute;
+                width: 300px !important;
+                will-change: transform;
+                top: 0px;
+                left: 0px;
+                transform: translate3d(1049px, 80px, 0px);
+            }
+
+            .kt-header--fixed .kt-header {
+                background: #014A87;
+            }
+
+            .kt-font-light {
+                color: white;
+            }
+            /*.kt-header-menu-wrapper .kt-header-menu .kt-menu__nav > .kt-menu__item > .kt-menu__submenu {
+                background-color: #014a87 !important;
+            }*/
+            .kt-header-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu > .kt-menu__subnav > .kt-menu__item:hover:not(.kt-menu__item--here):not(.kt-menu__item--active) > .kt-menu__link .kt-menu__link-text,
+            .kt-header-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu > .kt-menu__subnav > .kt-menu__item.kt-menu__item--hover:not(.kt-menu__item--here):not(.kt-menu__item--active) > .kt-menu__link .kt-menu__link-text {
+                color: #111111;
+            }
+        }
+
+        @@media (max-width: 1024px) {
+            .kt-header-mobile {
+                background: #014A87;
+            }
+
+            .kt-font-light {
+                color: #014A87 !important;
+            }
+        }
+    </style>
+
+    @*@Scripts.Render("~/Bundles/Scripts")*@
+
+    @RenderSection("scripts", required: false)
+
+    <script>
+        function hide_left(event) {
+
+        }
+
+        function checkRut(rut) {
+            // Despejar Puntos
+            var valor = rut.value.replace('.', '');
+            // Despejar Guión
+            valor = valor.replace('-', '');
+
+            // Aislar Cuerpo y Dígito Verificador
+            cuerpo = valor.slice(0, -1);
+            dv = valor.slice(-1).toUpperCase();
+
+            // Formatear RUN
+            rut.value = cuerpo + '-' + dv
+
+            // Si no cumple con el mínimo ej. (n.nnn.nnn)
+            if (cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false; }
+
+            // Calcular Dígito Verificador
+            suma = 0;
+            multiplo = 2;
+
+            // Para cada dígito del Cuerpo
+            for (i = 1; i <= cuerpo.length; i++) {
+
+                // Obtener su Producto con el Múltiplo Correspondiente
+                index = multiplo * valor.charAt(cuerpo.length - i);
+
+                // Sumar al Contador General
+                suma = suma + index;
+
+                // Consolidar Múltiplo dentro del rango [2,7]
+                if (multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+
+            }
+
+            // Calcular Dígito Verificador en base al Módulo 11
+            dvEsperado = 11 - (suma % 11);
+
+            // Casos Especiales (0 y K)
+            dv = (dv == 'K') ? 10 : dv;
+            dv = (dv == 0) ? 11 : dv;
+
+            // Validar que el Cuerpo coincide con su Dígito Verificador
+            if (dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
+
+            // Si todo sale bien, eliminar errores (decretar que es válido)
+            rut.setCustomValidity('');
+        }
+    </script>
+
+
+    <script src="~/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+    <script src="~/assets/js/scripts.bundle.js" type="text/javascript"></script>
+    <!--begin::Page Vendors(used by this page) -->
+
+
+    <script src="~/assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
+
+    <!--end::Page Vendors -->
+    <!--begin::Page Scripts(used by this page) -->
+    <script src="~/assets/vendors/custom/datatables/datatables.bundle.js"></script>
+    @*<script src="./assets/js/demo9/pages/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>*@
+    @*<script src="~/js/Acciones/CarruselDinamico/Bootstrap_datepicker.js"></script>*@
+    @*<script src="~/js/Acciones/CarruselDinamico/calendario.js"></script>*@
+    <script src="~/assets/css/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+
+
+    <!--end::Page Scripts -->
+    <script src="~/assets/js/demo9/pages/dashboard.js" type="text/javascript"></script>
+    <script src="~/assets/js/Sidebar/Sidebar.js"></script>
+    @*<script src="~/particles.js-master/particles.js"></script>*@
+
+    @*<script src="~/particles.js-master/demo/js/app.js"></script>
+    <script src="~/particles.js-master/demo/js/lib/stats.js"></script>*@
+    <!--end::Page Scripts -->
+</body>
+
+<!-- end::Body -->
+</html>

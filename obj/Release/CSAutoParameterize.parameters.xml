@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CON-Web.config Connection String" description="CON Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=proyectovision.database.windows.net;Initial Catalog=ProyectoVision;Persist Security Info=True;User ID=ProyectoVision;Password=Pass1234word" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\56937\\Desktop\\GAY0101-001V-p--0345ce7e8a66db12918869dc9d9bc9bb61a1f9ba\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CON']/@connectionString" />
+  </parameter>
+  <parameter name="ProyectoVisionEntities-Web.config Connection String" description="ProyectoVisionEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Models.ModelNube.csdl|res://*/Models.ModelNube.ssdl|res://*/Models.ModelNube.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=proyectovision.database.windows.net;initial catalog=ProyectoVision;persist security info=True;user id=ProyectoVision;password=Pass1234word;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\56937\\Desktop\\GAY0101-001V-p--0345ce7e8a66db12918869dc9d9bc9bb61a1f9ba\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProyectoVisionEntities']/@connectionString" />
+  </parameter>
+</parameters>

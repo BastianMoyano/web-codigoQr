@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="78d5f3715e0c4d94be1438cdcc6ce84a" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoVisionModel1.ASIGNACION_ALUMNO" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.ASIGNACION_PROFESOR" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.ASISTENCIA_MATERIA" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.CALENDARIO_MATERIA" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.CATEGORIA_LIBRO" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.ESTACIONAMIENTO" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.LIBRO" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MATERIA" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_MENU" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_PERMISOS_MENU" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_PERMISOS_SUB_MENU" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_SUB_MENU" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_TIPO_USUARIOS" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.MI_USUARIOS" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.PERIODO" Width="1.5" PointX="9.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.REGISTRO_BICICLETA" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.REGISTRO_INGRESO" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.REGISTRO_LIBRO" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.SECCION" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.SERIELIBRO" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.TORNIQUETE" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.database_firewall_rules" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ProyectoVisionModel1.ipv6_database_firewall_rules" Width="1.5" PointX="11.75" PointY="6.75" />
+        <AssociationConnector Association="ProyectoVisionModel1.FK_PermisosMenu_Modulos" />
+        <AssociationConnector Association="ProyectoVisionModel1.FK_SubMenu_Modulos" />
+        <AssociationConnector Association="ProyectoVisionModel1.FK_PermisosSubMenu_SubMenu" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

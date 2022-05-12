@@ -1,0 +1,19 @@
+{
+  "name": "WebApplication1",
+  "short_name": "Mi Duoc",
+  "description": "Bienvenid@s a #PortalMiDuoc App donde podras consultar tus historiales de Entrada y Salida, consultar asistencia y reservas de Estacionamiento",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./",
+  "scope": "./",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "logoDuoc.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ]
+}

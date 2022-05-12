@@ -1,0 +1,95 @@
+﻿
+
+.login-medicien {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.medicien_logo {
+    width: 80%;
+    margin-top: 10%;
+    height: auto;
+    margin-left: 0%;
+}
+
+.caida1 {
+    width: auto;
+    height: 112px;
+    animation: 3s caida1 1;
+    animation-fill-mode: forwards;
+}
+
+.caida2 {
+    width: auto;
+    height: 42px;
+    margin-top: 20px;
+}
+
+.caida3 {
+    width: auto;
+    height: 60px;
+    margin-left: 2%;
+}
+
+.caida4 {
+    width: auto;
+    height: 60px;
+}
+
+.caida5 {
+    width: auto;
+    height: 60px;
+}
+
+.caida6 {
+    width: auto;
+    height: 42px;
+    margin-top: 20px;
+}
+
+.caida7 {
+    width: auto;
+    height: 60px;
+}
+
+.caida8 {
+    width: auto;
+    height: 42px;
+    margin-top: 20px;
+}
+
+.caida9 {
+    width: auto;
+    height: 42px;
+    margin-top: 20px;
+}
+
+@keyframes caida1 {
+    0% {
+    }
+
+    20% {
+        transform: translateY(200px);
+    }
+
+    50% {
+        transform: scaleX(0.2);
+    }
+
+    70% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(-200px);
+        transform: scaleX(1);
+    }
+    /*20%,70%,100% {
+		transform: translateX(400px);
+	}
+
+	50%,80% {
+		transform: translateX(350px);
+	}*/
+}

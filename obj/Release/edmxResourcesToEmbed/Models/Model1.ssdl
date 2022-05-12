@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoVisionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASIGNACION_ALUMNO">
+    <Key>
+      <PropertyRef Name="ID_ASIGNACION" />
+    </Key>
+    <Property Name="ID_ASIGNACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SECCION" Type="int" />
+    <Property Name="ID_USUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="ASIGNACION_PROFESOR">
+    <Key>
+      <PropertyRef Name="ID_ASIGANCIONP" />
+    </Key>
+    <Property Name="ID_ASIGANCIONP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="ID_SECCION" Type="int" />
+  </EntityType>
+  <EntityType Name="ASISTENCIA_MATERIA">
+    <Key>
+      <PropertyRef Name="ID_ASISTENCIA" />
+    </Key>
+    <Property Name="ID_ASISTENCIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SECCION" Type="int" />
+    <Property Name="ID_CALENDARIOMATERIA" Type="int" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="ASISTENCIA" Type="int" />
+    <Property Name="EXAMEN" Type="int" />
+  </EntityType>
+  <EntityType Name="CALENDARIO_MATERIA">
+    <Key>
+      <PropertyRef Name="ID_CALENDARIOMATERIA" />
+    </Key>
+    <Property Name="ID_CALENDARIOMATERIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="date" />
+    <Property Name="ID_MATERIA" Type="int" />
+    <Property Name="ID_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="CATEGORIA_LIBRO">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_CATEGORIA" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ESTACIONAMIENTO">
+    <Key>
+      <PropertyRef Name="ID_ESTACIONAMIENTO" />
+    </Key>
+    <Property Name="ID_ESTACIONAMIENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUPO" Type="int" />
+    <Property Name="ID_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="LIBRO">
+    <Key>
+      <PropertyRef Name="ID_LIBRO" />
+    </Key>
+    <Property Name="ID_LIBRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITULO" Type="varchar" MaxLength="100" />
+    <Property Name="ANO" Type="varchar" MaxLength="50" />
+    <Property Name="AUTOR" Type="varchar" MaxLength="50" />
+    <Property Name="NUMERO_PAGINA" Type="varchar" MaxLength="50" />
+    <Property Name="ID_CATEGORIA" Type="int" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" />
+    <Property Name="IMAGEN" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="MATERIA">
+    <Key>
+      <PropertyRef Name="ID_MATERIA" />
+    </Key>
+    <Property Name="ID_MATERIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="ID_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="MI_MENU">
+    <Key>
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_MENU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_MENU" Type="varchar" MaxLength="50" />
+    <Property Name="TIPO" Type="bit" />
+    <Property Name="VISTA" Type="varchar" MaxLength="100" />
+    <Property Name="CONTROLADOR" Type="varchar" MaxLength="100" />
+    <Property Name="ICONO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MI_PERMISOS_MENU">
+    <Key>
+      <PropertyRef Name="ID_PERMISOS_MODULOS" />
+    </Key>
+    <Property Name="ID_PERMISOS_MODULOS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_MODULO" Type="int" />
+    <Property Name="COD_TIPOUSUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="MI_PERMISOS_SUB_MENU">
+    <Key>
+      <PropertyRef Name="ID_PERMISOS_SUB_MENU" />
+    </Key>
+    <Property Name="ID_PERMISOS_SUB_MENU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_SUB_MENU" Type="int" />
+    <Property Name="COD_TIPOUSUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="MI_SUB_MENU">
+    <Key>
+      <PropertyRef Name="ID_SUB_MODULO" />
+    </Key>
+    <Property Name="ID_SUB_MODULO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" />
+    <Property Name="COD_MODULO" Type="int" />
+    <Property Name="VISTA" Type="varchar" MaxLength="100" />
+    <Property Name="CONTROLADOR" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MI_TIPO_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_TIPO_USUARIO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MI_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="250" />
+    <Property Name="RUT" Type="varchar" MaxLength="50" />
+    <Property Name="CONSTRASENA" Type="varchar" MaxLength="250" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="COD_TIPO_USUARIO" Type="int" />
+    <Property Name="COD_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="PERIODO">
+    <Key>
+      <PropertyRef Name="IDPERIODO" />
+    </Key>
+    <Property Name="IDPERIODO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="FECHA_INICIO" Type="date" />
+    <Property Name="FECHA_FIN" Type="date" />
+    <Property Name="ID_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="REGISTRO_BICICLETA">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_BICICLETA" />
+    </Key>
+    <Property Name="ID_REGISTRO_BICICLETA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="FECHA_HORA_INGRESO" Type="datetime" />
+    <Property Name="FECHA_HORA_SALIDA" Type="datetime" />
+    <Property Name="ID_ESTACIONAMIENTO" Type="int" />
+  </EntityType>
+  <EntityType Name="REGISTRO_INGRESO">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO" />
+    </Key>
+    <Property Name="ID_REGISTRO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="FECHA_HORA_INGRESO" Type="datetime" />
+    <Property Name="FECHA_HORA_SALIDA" Type="datetime" />
+    <Property Name="ID_TORNIQUETE" Type="int" />
+  </EntityType>
+  <EntityType Name="REGISTRO_LIBRO">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_LIBRO" />
+    </Key>
+    <Property Name="ID_REGISTRO_LIBRO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="FECHA_HORA_RETIRO" Type="datetime" />
+    <Property Name="FECHA_HORA_RETORNO" Type="datetime" />
+    <Property Name="ID_LIBROSERIE" Type="int" />
+  </EntityType>
+  <EntityType Name="SECCION">
+    <Key>
+      <PropertyRef Name="ID_SECCION" />
+    </Key>
+    <Property Name="ID_SECCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SECCION" Type="varchar" MaxLength="50" />
+    <Property Name="ID_MATERIA" Type="int" />
+  </EntityType>
+  <EntityType Name="SERIELIBRO">
+    <Key>
+      <PropertyRef Name="ID_LIBROSERIE" />
+    </Key>
+    <Property Name="ID_LIBROSERIE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERIE" Type="varchar" MaxLength="50" />
+    <Property Name="ID_LIBRO" Type="int" />
+    <Property Name="ID_ESTADO" Type="int" />
+  </EntityType>
+  <EntityType Name="TORNIQUETE">
+    <Key>
+      <PropertyRef Name="ID_TORNIQUETE" />
+    </Key>
+    <Property Name="ID_TORNIQUETE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIPO_ESTADO" Type="int" />
+  </EntityType>
+  <Association Name="FK_PermisosMenu_Modulos">
+    <End Role="MI_MENU" Type="Self.MI_MENU" Multiplicity="0..1" />
+    <End Role="MI_PERMISOS_MENU" Type="Self.MI_PERMISOS_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="MI_PERMISOS_MENU">
+        <PropertyRef Name="COD_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermisosSubMenu_SubMenu">
+    <End Role="MI_SUB_MENU" Type="Self.MI_SUB_MENU" Multiplicity="0..1" />
+    <End Role="MI_PERMISOS_SUB_MENU" Type="Self.MI_PERMISOS_SUB_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_SUB_MENU">
+        <PropertyRef Name="ID_SUB_MODULO" />
+      </Principal>
+      <Dependent Role="MI_PERMISOS_SUB_MENU">
+        <PropertyRef Name="COD_SUB_MENU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubMenu_Modulos">
+    <End Role="MI_MENU" Type="Self.MI_MENU" Multiplicity="0..1" />
+    <End Role="MI_SUB_MENU" Type="Self.MI_SUB_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MI_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="MI_SUB_MENU">
+        <PropertyRef Name="COD_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProyectoVisionModelStoreContainer">
+    <EntitySet Name="ASIGNACION_ALUMNO" EntityType="Self.ASIGNACION_ALUMNO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASIGNACION_PROFESOR" EntityType="Self.ASIGNACION_PROFESOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ASISTENCIA_MATERIA" EntityType="Self.ASISTENCIA_MATERIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CALENDARIO_MATERIA" EntityType="Self.CALENDARIO_MATERIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGORIA_LIBRO" EntityType="Self.CATEGORIA_LIBRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTACIONAMIENTO" EntityType="Self.ESTACIONAMIENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIBRO" EntityType="Self.LIBRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MATERIA" EntityType="Self.MATERIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_MENU" EntityType="Self.MI_MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_PERMISOS_MENU" EntityType="Self.MI_PERMISOS_MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_PERMISOS_SUB_MENU" EntityType="Self.MI_PERMISOS_SUB_MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_SUB_MENU" EntityType="Self.MI_SUB_MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_TIPO_USUARIOS" EntityType="Self.MI_TIPO_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MI_USUARIOS" EntityType="Self.MI_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERIODO" EntityType="Self.PERIODO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGISTRO_BICICLETA" EntityType="Self.REGISTRO_BICICLETA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGISTRO_INGRESO" EntityType="Self.REGISTRO_INGRESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGISTRO_LIBRO" EntityType="Self.REGISTRO_LIBRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SECCION" EntityType="Self.SECCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERIELIBRO" EntityType="Self.SERIELIBRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TORNIQUETE" EntityType="Self.TORNIQUETE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PermisosMenu_Modulos" Association="Self.FK_PermisosMenu_Modulos">
+      <End Role="MI_MENU" EntitySet="MI_MENU" />
+      <End Role="MI_PERMISOS_MENU" EntitySet="MI_PERMISOS_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermisosSubMenu_SubMenu" Association="Self.FK_PermisosSubMenu_SubMenu">
+      <End Role="MI_SUB_MENU" EntitySet="MI_SUB_MENU" />
+      <End Role="MI_PERMISOS_SUB_MENU" EntitySet="MI_PERMISOS_SUB_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubMenu_Modulos" Association="Self.FK_SubMenu_Modulos">
+      <End Role="MI_MENU" EntitySet="MI_MENU" />
+      <End Role="MI_SUB_MENU" EntitySet="MI_SUB_MENU" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

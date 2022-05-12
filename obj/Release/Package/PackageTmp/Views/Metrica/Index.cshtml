@@ -1,0 +1,335 @@
+﻿
+
+
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-Finiquitados" role="tab" aria-controls="nav-home" aria-selected="true">Ingreso/salida</a>
+        <a class="nav-item nav-link" id="cierre" data-toggle="tab" href="#nav-Indicadores" role="tab" aria-controls="nav-profile" aria-selected="false">Alumno</a>
+        <a class="nav-item nav-link" id="examen" data-toggle="tab" href="#nav-Examen" role="tab" aria-controls="nav-profile" aria-selected="false">Examen</a>
+        <a class="nav-item nav-link" id="libro" data-toggle="tab" href="#nav-Libro" role="tab" aria-controls="nav-profile" aria-selected="false">Libro</a>
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-Finiquitados" role="tabpanel" aria-labelledby="nav-home-tab">
+            <br />
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">Ingreso y salida a sede</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="Gestion">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Id Usuario</th>
+                                <th scope="col">Asistencia a la sede</th>
+                                <th scope="col">Promedio Hrs</th>
+                                <th scope="col">Inasistencia</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyGestion">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">Ingreso y salida a Bici</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="Cierre">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Id Usuario</th>
+                                <th scope="col">Numero de uso</th>
+                                <th scope="col">Promedio Hrs</th>
+                                <th scope="col">Tasa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyCierre">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-Indicadores" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <br />
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">Asistencia ordenada por alumno</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="Asistenciaordenadaporalumno">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Alumno</th>
+                                <th scope="col">Inasistencia</th>
+                                <th scope="col"> Asistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyAsistenciaordenadaporalumno">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">Alumno Mayor Inasistencia</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="MayorInasistencia">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Alumno</th>
+                                <th scope="col">Materia</th>
+                                <th scope="col">Mayor inasistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyMayorInasistencia">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">Alumno Mayor Asistencia</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="Mayorasistencia">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Alumno</th>
+                                <th scope="col">Materia</th>
+                                <th scope="col">Mayor Asistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyMayorasistencia">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12"><h2 class="text-center">Promedio mas alto</h2></div>
+                </div>
+
+                <div class="px-5">
+                    <div class="row mt-3 ">
+                        <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="promediomasalto">
+                            <thead>
+
+                                <tr class="bg-gris">
+                                    <th scope="col">Alumno</th>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Promedio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodypromediomasalto">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12"><h2 class="text-center">Promedio mas Bajo</h2></div>
+                </div>
+
+                <div class="px-5">
+                    <div class="row mt-3 ">
+                        <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="promediomasbajo">
+                            <thead>
+
+                                <tr class="bg-gris">
+                                    <th scope="col">Alumno</th>
+                                    <th scope="col">Materia</th>
+                                    <th scope="col">Promedio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodypromediomasabajo">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+           
+        </div>
+        <div class="tab-pane fade" id="nav-Examen" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <br />
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">ASISTENCIA E INASISTENCIA POR ESTUDIANTE</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="asistenciainasitenciaporalumnoexamen">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Alumno</th>
+                                <th scope="col">Asistencia</th>
+                                <th scope="col">Inasistencia</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyasistenciainasitenciaporalumnoexamen">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">MAYOR ASISTENCIA POR MATERIA</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="mayorasistenciapormateria">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Materia</th>
+                                <th scope="col">Asistencia</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodymayorasistenciapormateria">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">MENOR ASISTENCIA POR MATERIA</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="menorasistenciapormateria">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Materia</th>
+                                <th scope="col">Asistencia</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodymenorasistenciapormateria">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-Libro" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <br />
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">LIBROS PRESTADOS</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="Prestados">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Libro Prestados</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyPrestados">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">LIBRO MAS PRESTADO</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="masPrestados">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Libro </th>
+                                <th scope="col">cantidad Prestado</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodymasPrestados">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">LIBRO MENOS PRESTADO</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="menosPrestados">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Libro </th>
+                                <th scope="col">cantidad Prestado</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodymenosPrestados">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12"><h2 class="text-center">TASA DE OCUPACION</h2></div>
+            </div>
+
+            <div class="px-5">
+                <div class="row mt-3 ">
+                    <table class="tablaa table text-center table-bordered table-sm table-hover table-striped" id="tasa">
+                        <thead>
+
+                            <tr class="bg-gris">
+                                <th scope="col">Tasa % </th>
+                             
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbodytasa">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+   
+
+
+    </div>
+
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+
+    <script src="~/assets/js/Mantendores/Metrica.js"></script>

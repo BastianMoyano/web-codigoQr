@@ -1,0 +1,168 @@
+﻿
+
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-grid--stretch">
+    <div id="kt_body" class="kt-container kt-body  kt-grid kt-grid--ver">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+            <div id="kt_subheader" class="kt-subheader   kt-grid__item"></div> <div id="kt_content" class="kt-content kt-grid__item kt-grid__item--fluid">
+                <div data-v-721775d7="" id="card-filtro-perfil">
+                    <div data-v-721775d7="" class="container-">
+                        <div data-v-721775d7="" class="row">
+                            <div data-v-721775d7="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div data-v-721775d7="" class="card border-filtro">
+                                    <div data-v-721775d7="" class="card-header">
+                                        <h2 data-v-721775d7="" class="text-center ">
+                                            <i data-v-721775d7="" class="fas fa-clipboard"></i> Periodo <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddPeriodo" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Agregar Periodo" data-original-title="" title=""><i class="fa fa-plus"></i></button>
+                                        </h2>
+
+                                    </div> <div data-v-721775d7="" class="card-body">
+                                        <div data-v-721775d7="" class="row">
+                                            <div data-v-721775d7="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div data-v-721775d7="" id="pills-tabContent" class="tab-content">
+                                                    <div data-v-721775d7="" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade show active">
+                                                        <div data-v-721775d7="" class="card card-success animated fadeIn delay-0s border-filtro">
+                                                            <div data-v-721775d7="" class="card-body">
+
+
+
+                                                                <table class="v-datatable v-table theme--light table table-hover table-striped table-borderless table-bordered" id="tbperiodo">
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            @*<th role="columnheader" scope="col" aria-label="Paciente: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Codigo<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>*@
+                                                                            <th role="columnheader" scope="col" aria-label="Paciente: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Descripcion<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>
+                                                                            <th role="columnheader" scope="col" aria-label="Profesional: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Fecha Inicio<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>
+                                                                            <th role="columnheader" scope="col" aria-label="Profesional: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Fecha Fin<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>
+                                                                            <th role="columnheader" scope="col" aria-label="Profesional: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Estado<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>
+                                                                            <th role="columnheader" scope="col" aria-label="Especialidad: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Acción<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;"></i></th>
+                                                                        </tr>
+
+                                                                    </thead>
+                                                                    <tbody id="mod-datos">
+                                                                    </tbody>
+                                                                </table>
+
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <br data-v-721775d7="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-Add-Periodo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#014A87;color:#fff">
+                <h5 class="modal-title" style="color:aliceblue">Periodo <br /><small style="color:aliceblue"> Agregar Periodo</small></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1"> Nombre Periodo</label>
+                        <input type="text" class="form-control" id="Add_Periodo" placeholder="Ingrese Periodo">
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 3%;">
+                        <label for="exampleInputEmail1">Fecha Inicio - Termino</label>
+                        <input type="text"
+                               class="form-control"
+                               
+                               placeholder="Seleccione Fecha" id="Add_Fecha">
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">Estado</label>
+                        <select id="Add_Estado" class="form-control">
+                            <option value="0">--Seleccione--</option>
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="BtnGuardarPeriodo" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal-Mod-Periodo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#014A87;color:#fff">
+                <h5 class="modal-title" style="color:aliceblue">Periodo <br /><small style="color:aliceblue"> Modificar Periodo</small></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <input type="text" class="form-control" id="Mod_codPeriodo">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">Periodo</label>
+                        <input type="text" class="form-control" id="Mod_Periodo" placeholder="Ingrese Perido">
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 3%;">
+                        <label for="exampleInputEmail1">Fecha Inicio - Termino</label>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Seleccione Fecha" id="Mod_Fecha">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">Estado</label>
+                        <select id="Mod_Estado" class="form-control">
+                            <option value="0">--Seleccione--</option>
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="BtnGuardarPeridoModificado" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts{
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+    <script src="~/assets/js/Periodo/Periodo.js"></script>
+    <script src="~/assets/LoadPage/LoadPage.js"></script>
+}

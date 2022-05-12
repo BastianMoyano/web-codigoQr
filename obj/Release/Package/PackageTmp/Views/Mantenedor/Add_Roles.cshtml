@@ -1,0 +1,195 @@
+﻿
+
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+
+
+<link href="~/assets/css/Despacho.css" rel="stylesheet" />
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-grid--stretch">
+    <div id="kt_body" class="kt-container kt-body  kt-grid kt-grid--ver">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+            <div id="kt_subheader" class="kt-subheader   kt-grid__item"></div> <div id="kt_content" class="kt-content kt-grid__item kt-grid__item--fluid">
+                <div data-v-721775d7="" id="card-filtro-perfil">
+                    <div data-v-721775d7="" class="container-">
+                        <div data-v-721775d7="" class="row">
+                            <div data-v-721775d7="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div data-v-721775d7="" class="card border-filtro">
+                                    <div data-v-721775d7="" class="card-header">
+                                        <h2 data-v-721775d7="" class="text-center titulo_medicien1">
+                                            <i data-v-721775d7="" class="fas fa-clipboard  "></i> Roles <button style="margin-right:10px" class="float-right d-inline-block btn btn-sm btn-outline-primary" id="AddRol" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Agregar Tipo Previsión" data-original-title="" title=""><i class="fa fa-plus"></i></button>
+                                        </h2>
+
+                                    </div> <div data-v-721775d7="" class="card-body">
+                                        <div data-v-721775d7="" class="row">
+                                            <div data-v-721775d7="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div data-v-721775d7="" id="pills-tabContent" class="tab-content">
+                                                    <div data-v-721775d7="" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade show active">
+                                                        <div data-v-721775d7="" class="card card-success animated fadeIn delay-0s border-filtro">
+                                                            <div data-v-721775d7="" class="card-body">
+
+
+
+                                                                <table class="v-datatable v-table theme--light table table-hover table-striped table-borderless table-bordered" id="Tabla_Roles">
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th role="columnheader" scope="col" aria-label="Paciente: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Rol<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">arrow_upward</i></th>
+                                                                            <th role="columnheader" scope="col" aria-label="Especialidad: Not sorted. Activate to sort ascending." aria-sort="none" tabindex="0" class="column sortable text-xs-left">Acción<i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">arrow_upward</i></th>
+                                                                        </tr>
+
+                                                                    </thead>
+                                                                    <tbody id="mod-datos">
+                                                                    </tbody>
+                                                                </table>
+
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <br data-v-721775d7="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-Add-Rol" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#014A87;color:#fff">
+                <h5 class="modal-title" style="color:aliceblue">Rol <br /><small style="color:aliceblue"> Agregar Rol</small></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">NOMBRE Rol</label>
+                        <input type="text" class="form-control" id="ADD_Rol" placeholder="Ingrese un Nombre de Rol">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="BtnGuardarRol" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal-Mod-Rol" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#014A87;color:#fff">
+                <h5 class="modal-title" style="color:aliceblue">Rol<br /><small style="color:aliceblue">Modificar Rol</small></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <input type="text" class="form-control" id="MOD_COD_Rol" disabled="">
+
+
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">NOMBRE Rol</label>
+                        <input type="text" class="form-control" id="Mod_Rol" placeholder="Ingrese Rol">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="BtnGuardarRolModificado" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-xl" id="modal-Mod-Permiso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#014A87;color:#fff">
+                <h5 class="modal-title" style="color:aliceblue">Parmiso <br /><small style="color:aliceblue"> Agregar Permiso</small></h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="text" class="form-control" id="MOD_ID" disabled="">
+
+                    <table class="table table-hover  table-striped table-responsive" id="Tablamodulos">
+                        <thead>
+                            <tr id="moduloss">
+                                <th class="text-white text-center" style="background-color:#343a40; width:50%">Menu</th>
+
+                                <th colspan="22" class="text-white text-center" style="background-color:#343a40">Sub-Menu</th>
+                            </tr>
+
+                        </thead>
+                        <tbody id="modulos_sub"></tbody>
+                    </table>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="BtnGuardarPermiso" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal_eliminar" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color:white">Eliminar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>¿Esta seguro que desea eliminar a este Rol?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="EliminarUsuario(this)" id="EliminarUsuarioM" class="btn btn-primary">Si</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <!-- JavaScript Bundle with Popper -->
+    
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+    <script src="~/assets/js/Mantendores/Rol.js"></script>
+    <script src="~/assets/LoadPage/LoadPage.js"></script>
+
+}
