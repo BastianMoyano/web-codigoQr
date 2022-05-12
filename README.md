@@ -15,3 +15,9 @@ nombre de base da datos WebApplicationdb
 usuario aministrador 
 197434724
 Administrador
+
+donde encontrar los archivos
+carpeta controller estaran los controladores
+carpeta model los modelos 
+capeta asset/js/mantendores estaran todos los js
+carpeta view esta los html
