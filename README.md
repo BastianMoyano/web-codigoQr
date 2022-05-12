@@ -1,0 +1,2 @@
+# web-codigoQr
+Aplicacion web 
